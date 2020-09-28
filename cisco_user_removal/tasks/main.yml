@@ -5,7 +5,7 @@
     name: "{{ item }}"
     state: absent
   register: user_result
-  with_items: "{{ local_users }}"
+  with_items: "{{ remove_local_users }}"
 
 - name: Save IOS
   cisco.ios.ios_command:

@@ -3,7 +3,7 @@
 Removes users from cisco devices in a list.
 
 ```
-local_users:
+remove_local_users:
     - user1
     - user2
 ```
