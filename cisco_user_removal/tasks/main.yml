@@ -1,0 +1,13 @@
+---
+# tasks file for cisco_user_removal
+- name: Ensure admin users exist
+  cisco.ios.ios_user:
+    name: "{{ item }}"
+    state: absent
+  register: user_result
+  with_items: "{{ local_users }}"
+
+- name: Save IOS
+  cisco.ios.ios_command:
+    commands: write memory
+  when: user_result is changed
