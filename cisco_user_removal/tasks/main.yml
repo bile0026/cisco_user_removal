@@ -1,6 +1,6 @@
 ---
 # tasks file for cisco_user_removal
-- name: Ensure admin users exist
+- name: Ensure admin users do not exist
   cisco.ios.ios_user:
     name: "{{ item }}"
     state: absent
